@@ -49,18 +49,19 @@
 }
 
 .exercise-card{
-  margin: 5px 25px; // separar os card do top (5px) e um do outro (25px)
-  width: 250px; // tamanho fixo dos cards
-  float:left; // lado a lado. TAMBEM PODE SER ALTERADO PARA -> diplay: inline-block
+  margin: 5px 10px; /* separar os card do top (5px) e um do outro (25px)*/
+  width: 250px; /* tamanho fixo dos cards*/
+  float:left; /* lado a lado. TAMBEM PODE SER ALTERADO PARA -> display: inline-block*/
   
-  border-width: 5px;
+  border-width: 2px;
+  box-shadow: 3px 3px 5px #888888;
   padding-left: 0;
   border-style: solid;
   border-radius: 10px;
 }
 
 .exercise-card img{
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 
