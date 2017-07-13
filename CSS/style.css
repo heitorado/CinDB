@@ -51,6 +51,7 @@
 .exercise-card{
   margin: 5px 10px; /* separar os card do top (5px) e um do outro (25px)*/
   width: 250px; /* tamanho fixo dos cards*/
+  height: 250px;
   float:left; /* lado a lado. TAMBEM PODE SER ALTERADO PARA -> display: inline-block*/
   
   border-width: 2px;
