@@ -12,7 +12,7 @@
 }
 
 body{
-  background-color: rgb(250,250,250);
+  background-color: white;
 }
 
 .navbar-brand
@@ -52,11 +52,15 @@ body{
   font-weight: lighter;
 }
 
+.main{
+  text-align: center;
+}
+
 .exercise-card{
   margin: 5px 10px; /* separar os card do top (5px) e um do outro (25px)*/
   width: 250px; /* tamanho fixo dos cards*/
   height: 310px;
-  float: left; /* lado a lado. TAMBEM PODE SER ALTERADO PARA -> display: inline-block*/
+  display: inline-block;
   
   /*border-width: 2px;*/
   padding-left: 0;
@@ -69,7 +73,7 @@ body{
 }
 
 .exercise-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 4px 8px 16px 0px rgba(0,0,0,0.3);
 }
 
 .exercise-card img{
