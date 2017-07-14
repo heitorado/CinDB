@@ -52,10 +52,6 @@ body{
   font-weight: lighter;
 }
 
-.main{
-  text-align: center;
-}
-
 .exercise-card{
   margin: 5px 10px; /* separar os card do top (5px) e um do outro (25px)*/
   width: 250px; /* tamanho fixo dos cards*/
