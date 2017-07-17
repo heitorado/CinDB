@@ -1,11 +1,11 @@
-/* Remove the navbar's default margin-bottom and rounded borders */ 
+/* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
   color: white;
 }
 
-.navbar-inverse .navbar-brand:hover, 
+.navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
   background-color: transparent;
   color: #999999;
@@ -57,7 +57,7 @@ body{
   width: 250px; /* tamanho fixo dos cards*/
   height: 310px;
   display: inline-block;
-  
+
   /*border-width: 2px;*/
   padding-left: 0;
   /*border-style: solid;*/
@@ -74,6 +74,7 @@ body{
 
 .exercise-card img{
   border-radius: 5px 5px 0 0;
+  width:100%;
 }
 
 .card-container{
@@ -94,5 +95,5 @@ footer {
     height: auto;
     padding: 15px;
   }
-  .row.content {height:auto;} 
+  .row.content {height:auto;}
 }
