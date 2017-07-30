@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CinDB</title>
+</head>
+<body>
+	<h1>Cadastro de questões</h1>
+
+	<hr>
+
+	<form method="post">
+		<label for="enunciado"><p>Enunciado:</p></label>
+		<textarea name="enunciado" id="enunciado" rows="10" cols="60"></textarea>
+
+		<hr>
+
+		<label for="professores"><p>Professor:</p></label>
+  		<select name="professores" id="professores">
+		  <option value="1">1</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		</select>
+
+		<hr>
+
+		<label for="cadeira"><p>Cadeira:</p></label>
+  		<select name="cadeira" id="cadeira">
+		  <option value="1">1</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		</select>
+
+		<hr>
+
+		<label for="tags"><p>Tags:</p></label>
+		<input type="checkbox" name="tags" id="tags" value="tag1"> tag1<br>
+
+  		<hr>
+
+  		<h3>Deseja já enviar solução?</h3>
+  		<input type="radio" name="solution" id="solution-yes" value="solution"> SIM<br>
+  		<input type="radio" name="solution" id="solution-no" value="solution" checked> NÃO<br>
+
+  		<label for="solution-text"><p>Resposta:</p></label>
+		<textarea name="solution-text" id="solution-text" rows="10" cols="60"></textarea>
+
+
+
+	</form>
+</body>
+</html>
