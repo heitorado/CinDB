@@ -2,9 +2,12 @@
 <html>
 <head>
 	<title>CinDB</title>
+
+	<!-- Custom styles for this template -->
+  	<link href="../public/CSS/style.css" rel="stylesheet">
 </head>
 <body>
-	<h1>Cadastro de Cadeiras e Tags</h1>
+	<h1>Gerenciador de Cadeiras</h1>
 
 	<hr>
 
@@ -26,6 +29,29 @@
 
 	<hr>
 
+	<table>
+		<tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Tags</td>
+        </tr>
+
+		<?php
+			require_once "../Core/dbconnection.php";
+
+	        $conn = dbconnection::conn();
+	       	
+	       	$result = $conn->query("SELECT * FROM cadeiras");
+
+	       	foreach ($result as $row) {
+	       		echo"<tr>";
+	       		echo"<td>$row[idcadeiras]</td>";
+	       		echo"<td>$row[nome]</td>";
+	       		echo "</tr>";
+	       	}
+	 
+	    ?>
+    </table>
 
 </body>
 </html>
