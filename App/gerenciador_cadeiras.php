@@ -9,23 +9,26 @@
 	<!-- Custom Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Aldrich|Fugaz+One|Quantico" rel="stylesheet">
 	<!-- Custom styles for this template -->
-	<link href="../public/CSS/style.css" rel="stylesheet">
-	<link href="../public/js/tagsinput.css" rel="stylesheet">
+    <link href="../public/js/tagsinput.css" rel="stylesheet">
+    <link href="../public/CSS/mgmtpgs_style.css" rel="stylesheet">
 
 </head>
 <body>
     <h1>Gerenciador de Cadeiras</h1>
 
+    <!-- modal trigger-->
+        <button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#modalCadastro">Criar Nova</button>
+
     <hr>
 
     <!-- aqui vai ficar a lista de cadeiras ja existentes com um botao de "edit" do lado-->
     
-    <table>
+    <table id="dbsummary">
         <tr>
-            <td>ID</td>
-            <td>Nome</td>
-            <td>Tags</td>
-            <td>Professres</td>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Tags</th>
+            <th>Professores</th>
         </tr>
 
         <?php
@@ -35,60 +38,59 @@
             
             $result = $conn->query("SELECT * FROM cadeiras");
 
+
             foreach ($result as $row) {
-                echo"<tr>";
-                echo"<td>$row[idcadeiras]</td>";
-                echo"<td>$row[nome]</td>";
-                echo"<td> vai ter tag aqui <td>";
-                echo"<td> vai ter professores aqui<td>"
-                echo"<td><a href='#'>Editar</a><td>";
-                echo"<td><a href='#'>Excluir</a><td>";
+                //$tags = $conn->query("SELECT * FROM tags WHERE idtags = ")
+
+                echo "<tr>";
+                echo "<td id='idcol'>$row[idcadeiras]</td>";
+                echo "<td>$row[nome]</td>";
+                echo "<td> vai ter tag aqui </td>";
+                echo "<td> vai ter professores aqui</td>";
+                echo "<td class='table-option'><a href='#'>Editar</a></td>";
+                echo "<td class='table-option'><a href='#'>Excluir</a></td>";
                 echo "</tr>";
             }
      
         ?>
     </table>
 
-    <!-- modal trigger-->
-	<button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#modalCadastro">Criar Nova</button>
+    <!-- Modal -->
+    <div id="modalCadastro" class="modal fade" role="dialog">
+      <div class="modal-dialog">
 
-	<!-- Modal -->
-	<div id="modalCadastro" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-
-	    <!-- Modal content-->
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Cadastrar nova Cadeira</h4>
-	      </div>
-	      <div class="modal-body">
-	      	<!--form para cadastro de novas cadeiras-->
-	        <form method="post" name="nova-cadeira" action="../Core/form_cadeiras_tags.php">
-		        <div class="form-group">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Cadastrar nova Cadeira</h4>
+          </div>
+          <div class="modal-body">
+            <!--form para cadastro de novas cadeiras-->
+            <form method="post" name="nova-cadeira" action="../Core/form_cadeiras_tags.php">
+                <div class="form-group">
                     <label for="nome">Nome:</label>
                     <input class="form-control" type="text" name="nome" id="nome">
                     <p class="help-block">Insira o nome da cadeira</p>
                 </div>
 
-		        <div class="form-group">
+                <div class="form-group">
                     <label for="tags">Tags:</label>
                     <input class="form-control" type="text" name="tags" id="tags" data-role="tagsinput">
                     <p class="help-block">Insira os tópicos da cadeira, separados por vírgula.</p>
                 </div>
-		        <button type="submit" class="btn btn-default">Criar</button>
-		    </form>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
+                <button type="submit" class="btn btn-default">Criar</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
 
-	  </div>
-	</div>
+      </div>
+    </div>
 
 
-    <hr>
     <hr>
 <!--
     <div class="row">
@@ -219,8 +221,8 @@
     
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../public/js/tagsinput.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../public/js/tagsinput.js"></script>
 </body>
 </html>
