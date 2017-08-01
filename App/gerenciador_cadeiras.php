@@ -38,18 +38,40 @@
             
             $result = $conn->query("SELECT * FROM cadeiras");
 
+            $tagsString = NULL;
+
 
             foreach ($result as $row) {
                 //$tags = $conn->query("SELECT * FROM tags WHERE idtags = ")
 
+                $tagsID = $conn->query("SELECT tags_idtags FROM cadeiras_has_tags WHERE cadeiras_idcadeiras = $row[idcadeiras]");
+
+                foreach ($tagsID as $tag) {
+                    $tagQry = $conn->query("SELECT nome FROM tags WHERE idtags = $tag[tags_idtags]");
+
+                    foreach ($tagQry as $key) {
+                        $tagsString .= $key['nome'].", ";
+                    }
+
+                    
+                }
+
+                $tagsString[strlen ($tagsString)-1] = NULL;
+                $tagsString[strlen ($tagsString)-2] = NULL;
+
+                var_dump($tagsString);
+
                 echo "<tr>";
                 echo "<td id='idcol'>$row[idcadeiras]</td>";
                 echo "<td>$row[nome]</td>";
-                echo "<td> vai ter tag aqui </td>";
+                echo "<td>$tagsString</td>";
                 echo "<td> vai ter professores aqui</td>";
+                //ideia: gravar o ID aqui, para poder pegar ele no cadeira_excluir posteriormente. tipo <a value="idcadeiras", etc. Assim cada editar vai ter seu proprio ID associado.
                 echo "<td class='table-option'><a href='#'>Editar</a></td>";
                 echo "<td class='table-option'><a href='#'>Excluir</a></td>";
                 echo "</tr>";
+
+                $tagsString = NULL;
             }
      
         ?>
