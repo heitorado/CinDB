@@ -19,7 +19,7 @@
     <hr>
 
     <!-- aqui vai ficar a lista de cadeiras ja existentes com um botao de "edit" do lado-->
-    
+
     <table>
         <tr>
             <td>ID</td>
@@ -32,7 +32,7 @@
             require_once "../Core/dbconnection.php";
 
             $conn = dbconnection::conn();
-            
+
             $result = $conn->query("SELECT * FROM cadeiras");
 
             foreach ($result as $row) {
@@ -40,12 +40,12 @@
                 echo"<td>$row[idcadeiras]</td>";
                 echo"<td>$row[nome]</td>";
                 echo"<td> vai ter tag aqui <td>";
-                echo"<td> vai ter professores aqui<td>"
+                echo"<td> vai ter professores aqui<td>";
                 echo"<td><a href='#'>Editar</a><td>";
                 echo"<td><a href='#'>Excluir</a><td>";
                 echo "</tr>";
             }
-     
+
         ?>
     </table>
 
@@ -216,7 +216,7 @@
         </div>
     </div>
 -->
-    
+
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
