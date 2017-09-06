@@ -9,7 +9,7 @@
       <link href="../public/css/style.css" rel="stylesheet">
 </head>
 <body>
-      <nav class="navbar navbar-inverse">
+      <nav id="indexNav" class="navbar navbar-inverse">
             <div class="container-fluid">
                   <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -30,7 +30,7 @@
       <div class="container-fluid text-center">
             <div class="wrapper row">
                   <!-- Barra lateral esquerda -->
-                  <div class="col-sm-12 col-md-2 sidebar">
+                  <div id="indexSidebar" class="col-sm-12 col-md-2 sidebar">
                         <div class="dropdown">
                               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                                     Selecione...
@@ -78,7 +78,7 @@
                   <!-- fim Barra lateral esquerda -->
 
                   <!-- Conteudo -->
-                  <div class="col-sm-12 col-md-10 text-center" style="margin: 10px auto;">
+                  <div id="indexContent" class="col-sm-12 col-md-10 text-center" style="margin: 10px auto;">
                         <!-- Col removido temp -->
                         <div class="exercise-card">
                               <img src="https://placekitten.com/250/240" alt="Thumb"> <!-- OBS- TIREI CSS INLINE PQ VC JA TEM UMA CLASS PRA IMAGEM -->
@@ -127,6 +127,7 @@
                                     <p>Dijkstra, Prim</p>
                               </div>
                         </div>
+                        
                         <ul class="pagination">
                               <li><a href="#">1</a></li>
                               <li class="active"><a href="#">2</a></li>
@@ -142,7 +143,7 @@
       <footer class="container-fluid text-center">
             <p>fecit anno MMXVII</p>
       </footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="../public/js/jquery.min.js"></script>
+      <script src="../public/js/bootstrap.min.js"></script>
 </body>
 </html>

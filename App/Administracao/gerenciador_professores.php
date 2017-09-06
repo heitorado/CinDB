@@ -7,11 +7,10 @@
       <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
       <link rel="stylesheet" href="../../public/css/mgmtpgs_style.css">
       <link rel="stylesheet" href="../../public/css/ie10-viewport-bug-workaround.css">
-      <link href="https://fonts.googleapis.com/css?family=Aldrich|Fugaz+One|Quantico" rel="stylesheet">
-      <link rel="stylesheet" href="../../public/css/teste.css">
+      <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 <body>
-      <nav class="navbar navbar-inverse visible-xs">
+      <nav id="adminNav" class="navbar navbar-inverse visible-xs">
             <div class="container-fluid">
                   <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -19,7 +18,7 @@
                               <span class="icon-bar"></span>
                               <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">CinDB</a>
+                        <a class="navbar-brand" href="#">CinDb</a>
                   </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -34,10 +33,10 @@
       <div class="container-fluid">
             <div class="wrapper row">
                   <!-- Inicio nav -->
-                  <nav class="sidebar col-sm-12 col-md-2">
+                  <nav id="adminSidebar" class="sidebar col-sm-12 col-md-2">
                         <!-- Nav Header -->
                         <div class="sidebar-header">
-                              <h2>CinDB</h2>
+                              <h2>CinDb</h2>
                         </div>
                         <!-- Nav Links -->
                         <ul>
@@ -120,7 +119,7 @@
                         </div>
                   </div>
             </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="../../public/js/jquery.min.js"></script>
             <script type="text/javascript" src="../../public/js/bootstrap.min.js"></script>
             <script>
             $(document).ready(function(){

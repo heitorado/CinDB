@@ -1,128 +1,194 @@
-/* Fonts */
-/* latin */
+/* ========================= geral ========================= */
 @font-face {
-  font-family: 'Aldrich';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/Aldrich-Regular.woff2") format('woff2');
-}
-/* latin */
-@font-face {
-  font-family: 'Fugaz One';
-  font-style: normal;
-  font-weight: 400;
-  src:  url("../fonts/FugazOne-Regular.woff2") format('woff2');
-}
-/* latin */
-@font-face {
-  font-family: 'Quantico';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/Quantico-Regular.woff2") format('woff2');
-}
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      color: white;
+      font-family: 'Aldrich';
+      font-style: normal;
+      font-weight: 400;
+      src: url("../fonts/Aldrich-Regular.woff2") format('woff2');
 }
 
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-brand:focus {
-      background-color: transparent;
-      color: #999999;
+@font-face {
+      font-family: 'Fugaz One';
+      font-style: normal;
+      font-weight: 400;
+      src:  url("../fonts/FugazOne-Regular.woff2") format('woff2');
 }
 
-body{
-      background-color: white;
+@font-face {
+      font-family: 'Quantico';
+      font-style: normal;
+      font-weight: 400;
+      src: url("../fonts/Quantico-Regular.woff2") format('woff2');
 }
 
-.navbar-brand
-{
-      font-family: 'Aldrich',sans-serif;
-      font-size: 32px;
-}
 
 .wrapper{
       display: flex;
 }
 
-/* Set gray background color and 100% height */
-.sidebar {
+@media screen and (max-width: 767px) {
+      .wrapper{
+            display: inherit;
+      }
+
+      #indexSidebar.sidebar {
+            height: auto;
+            padding: 15px;
+      }
+
+      #adminSidebar.sidebar {
+            display: none;
+      }
+}
+/* ========================= end geral ========================= */
+
+/* ========================= index ========================= */
+#indexNav.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+}
+
+#indexNav.navbar-inverse .navbar-brand:hover,
+#indexNav.navbar-inverse .navbar-brand:focus {
+      background-color: transparent;
+      color: #999999;
+}
+
+#indexNav .navbar-brand {
+      font-family: 'Aldrich',sans-serif;
+      font-size: 32px;
+}
+
+#indexSidebar.sidebar {
       padding-top: 20px;
       background-color: #f1f1f1;
 }
 
-.dropdown{
+#indexSidebar.sidebar > .dropdown{
       text-align: left;
       padding-bottom: 0px;
 }
 
-.search{
+#indexSidebar.sidebar > .search{
       padding-top: 30px;
       text-align: left;
       font-family: 'Quantico',sans-serif;
       font-size: 24px;
 }
 
-.tags{
+#indexSidebar.sidebar > .tags{
       padding-left: 20px;
       text-align: left;
       font-size: 16px;
       font-weight: lighter;
 }
 
-.exercise-card{
-      margin: 5px 10px; /* separar os card do top (5px) e um do outro (25px)*/
-      width: 250px; /* tamanho fixo dos cards*/
+#indexContent > .exercise-card{
+      margin: 5px 10px;
+      width: 250px;
       min-height: 310px;
       vertical-align: top;
       display: inline-block;
-      /*border-width: 2px;*/
       padding-left: 0;
-      /*border-style: solid;*/
       border-radius: 10px;
 
-      /*card effect*/
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
 }
 
-.exercise-card:hover {
+#indexContent > .exercise-card:hover {
       box-shadow: 4px 8px 16px 0px rgba(0,0,0,0.3);
 }
 
-.exercise-card img{
+#indexContent > .exercise-card img{
       border-radius: 5px 5px 0 0;
       width:100%;
 }
 
-.card-container{
+#indexContent > .exercise-card > .card-container{
       padding: 2px 16px;
 }
 
+#indexContent > .pagination{
+      display: table;
+      margin: 20px auto;
+}
 
-/* Set black background color, white text and some padding */
+
 footer {
       background-color: #555;
       color: white;
       padding: 15px;
 }
+/* ========================= end index ========================= */
 
-.pagination{
-      display: table;
-      margin: 20px auto;
+/* ========================= admin ========================= */
+#adminNav.navbar,
+#adminSidebar.sidebar{
+      background-color: #c1c1c1;
 }
 
-/* On small screens, set height to 'auto' for sidebar and grid */
-@media screen and (max-width: 767px) {
-      .wrapper{
-            display: inherit;
-      }
-
-      .sidebar {
-            height: auto;
-            padding: 15px;
-      }
-      .row.content {height:auto;}
+#adminNav.navbar,
+#adminNav.navbar.navbar-inverse > .container-fluid > .navbar-header > .navbar-toggle,
+#adminSidebar.sidebar{
+      border: 1px solid #919191;
 }
+
+#adminNav.navbar.navbar-inverse .navbar-collapse{
+      border-color: #919191;
+}
+
+#adminNav.navbar.navbar-inverse .navbar-brand{
+      color: #333;
+      font-size: 32px;
+}
+
+#adminNav.navbar .navbar-header > a,
+#adminSidebar.sidebar .sidebar-header{
+      font-family: 'Aldrich',sans-serif;
+}
+
+#adminNav.navbar.navbar-inverse .navbar-nav>li>a,
+#adminSidebar.sidebar > ul > li > a{
+      color: #ffffff;
+      font-weight: bold;
+}
+
+#adminNav.navbar.navbar-inverse .navbar-nav>li:not(.active)>a:hover,
+#adminSidebar.sidebar ul > li:not(.active) > a:hover{
+      background-color: #242424;
+}
+
+#adminNav.navbar.navbar-inverse .navbar-nav>.active>a,
+#adminNav.navbar.navbar-inverse .navbar-nav>.active>a:hover,
+#adminSidebar.sidebar ul > li.active > a{
+      background: #ff9900;
+}
+
+#adminNav.navbar ul.nav.navbar-nav > li > a {
+      color: #ffffff;
+}
+
+#adminSidebar.sidebar {
+      margin-right: 25px;
+      padding: 0;
+      height: 100vh;
+}
+
+#adminSidebar.sidebar > .sidebar-header{
+      padding: 10px;
+}
+
+#adminSidebar.sidebar ul{
+      margin: 15px 0;
+      padding: 0;
+      list-style: none;
+      background: #919191;
+}
+
+#adminSidebar.sidebar > ul > li > a{
+      padding: 5px 10px;
+      display: block;
+      text-decoration: none;
+}
+
+/* ========================= end admin ========================= */
