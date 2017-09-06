@@ -1,218 +1,152 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>CinDB</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- Custom Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Aldrich|Fugaz+One|Quantico" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="../public/CSS/style.css" rel="stylesheet">
-  <!--OBS- É BOM SEMPRE CARREGAR SCRIPTS NO FINAL DO DOCUMENTO -->
+      <title>CinDB</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+      <!-- Custom Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Aldrich|Fugaz+One|Quantico" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="../public/css/style.css" rel="stylesheet">
 </head>
 <body>
+      <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                  <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand"> CinDb </a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                  </div>
+            </div>
+      </nav>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand"> CinDb </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <!--
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Projetos</a></li>
-        <li><a href="#">Contato</a></li>
-        -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <div class="container-fluid text-center">
+            <div class="wrapper row">
+                  <!-- Barra lateral esquerda -->
+                  <div class="col-sm-12 col-md-2 sidebar">
+                        <div class="dropdown">
+                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Selecione...
+                                    <span class="caret"></span>
+                              </button>
+                              <!-- left para ajustar a posição -->
+                              <ul class="dropdown-menu dropdown-menu-left">
+                                    <!-- periodo -->
+                                    <li class="dropdown-header">
+                                          Primeiro Período
+                                          <!-- materia -->
+                                          <ul>
+                                                <li><a href="#">Introdução à Programação</a></li>
+                                                <li><a href="#">AVLC</a></li>
+                                                <li><a href="#">Matemática Discreta</a></li>
+                                          </ul>
+                                          <!-- fim materia -->
+                                    </li>
+                                    <!-- fim periodo -->
 
-<div class="container-fluid text-center">
-  <div class="content">
-    <div class="row">
-      <!-- Barra lateral esquerda -->
-      <div class="col-sm-12 col-md-2 sidenav">
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-            Selecione...
-            <span class="caret"></span>
-          </button>
-          <!-- left para ajustar a posição -->
-          <ul class="dropdown-menu dropdown-menu-left">
-            <!-- periodo -->
-            <li class="dropdown-header">
-              Primeiro Período
-              <!-- materia -->
-              <ul>
-                <li><a href="#">Introdução à Programação</a></li>
-                <li><a href="#">AVLC</a></li>
-                <li><a href="#">Matemática Discreta</a></li>
-              </ul>
-              <!-- fim materia -->
-            </li>
-            <!-- fim periodo -->
+                                    <!-- periodo -->
+                                    <li class="dropdown-header">
+                                          Segundo Período
+                                          <!-- materia -->
+                                          <ul>
+                                                <li><a href="#">Algoritmos</a></li>
+                                                <li><a href="#">Lógica</a></li>
+                                                <li><a href="#">Sistemas Digitais</a></li>
+                                          </ul>
+                                          <!-- fim materia -->
+                                    </li>
+                                    <!-- fim periodo -->
+                              </ul>
+                        </div>
 
-            <!-- periodo -->
-            <li class="dropdown-header">
-              Segundo Período
-              <!-- materia -->
-              <ul>
-                <li><a href="#">Algoritmos</a></li>
-                <li><a href="#">Lógica</a></li>
-                <li><a href="#">Sistemas Digitais</a></li>
-              </ul>
-              <!-- fim materia -->
-            </li>
-            <!-- fim periodo -->
-          </ul>
-         </div>
+                        <div class="search">
+                              <p>Filtros:</p>
+                        </div>
+                        <div class="tags">
+                              <label><input type="checkbox" value="">Assunto 1</label><br>
+                              <label><input type="checkbox" value="">Assunto 2</label><br>
+                              <label><input type="checkbox" value="">Assunto 3</label><br>
+                        </div>
+                  </div> <!-- OBS- col-sm-12 (celular), col-md-(metade da tela do meu note) -->
+                  <!-- fim Barra lateral esquerda -->
 
-        <div class="search">
-          <p>Filtros:</p>
-        </div>
-        <div class="tags">
-          <label><input type="checkbox" value="">Assunto 1</label><br>
-          <label><input type="checkbox" value="">Assunto 2</label><br>
-          <label><input type="checkbox" value="">Assunto 3</label><br>
-        </div>
-      </div> <!-- OBS- col-sm-12 (celular), col-md-(metade da tela do meu note) -->
-      <!-- fim Barra lateral esquerda -->
+                  <!-- Conteudo -->
+                  <div class="col-sm-12 col-md-10 text-center" style="margin: 10px auto;">
+                        <!-- Col removido temp -->
+                        <div class="exercise-card">
+                              <img src="https://placekitten.com/250/240" alt="Thumb"> <!-- OBS- TIREI CSS INLINE PQ VC JA TEM UMA CLASS PRA IMAGEM -->
+                              <div class="card-container">
+                                    <h4><b>Tópicos:</b></h4>
+                                    <p>Dijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, Prim</p>
+                              </div>
+                        </div>
 
-      <!-- Conteudo -->
-      <div class="col-sm-12 col-md-10 text-center" style="margin: 10px auto;">
-        <!-- Col removido temp -->
-        <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"> <!-- OBS- TIREI CSS INLINE PQ VC JA TEM UMA CLASS PRA IMAGEM -->
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <!--
-            OBS- IMPORTANTES:
-            Do modo que esta, textos grande vão atravessar o card. Para resolver (uma das soluções),
-            mude na classe exercise-card height para min-height, e assim o card se adaptara.
-            mas isso vai deixar verticamente desalinhado, para isso adicione o atributo vertical-align
-            use o developers tool do browser pra ver qual te agrada mais ;)
-            P.S - Ana me desculpe pelo meus nadas que fiz
-            -->
-            <p>Dijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, Prim</p>
-          </div>
-        </div>
+                        <div class="exercise-card">
+                              <img src="https://placekitten.com/250/240" alt="Thumb">
+                              <div class="card-container">
+                                    <h4><b>Tópicos:</b></h4>
+                                    <p>Dijkstra, Prim</p>
+                              </div>
+                        </div>
 
-        <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb">
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
+                        <div class="exercise-card">
+                              <img src="https://placekitten.com/250/240" alt="Thumb"  >
+                              <div class="card-container">
+                                    <h4><b>Tópicos:</b></h4>
+                                    <p>Dijkstra, Prim</p>
+                              </div>
+                        </div>
 
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
+                        <div class="exercise-card">
+                              <img src="https://placekitten.com/250/240" alt="Thumb"  >
+                              <div class="card-container">
+                                    <h4><b>Tópicos:</b></h4>
+                                    <p>Dijkstra, Prim</p>
+                              </div>
+                        </div>
 
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
+                        <div class="exercise-card">
+                              <img src="https://placekitten.com/250/240" alt="Thumb"> <!-- OBS- TIREI CSS INLINE PQ VC JA TEM UMA CLASS PRA IMAGEM -->
+                              <div class="card-container">
+                                    <h4><b>Tópicos:</b></h4>
+                                    <p>Dijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, Prim</p>
+                              </div>
+                        </div>
 
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
+                        <div class="exercise-card">
+                              <img src="https://placekitten.com/250/240" alt="Thumb"  >
+                              <div class="card-container">
+                                    <h4><b>Tópicos:</b></h4>
+                                    <p>Dijkstra, Prim</p>
+                              </div>
+                        </div>
+                  </div>
+                  <!-- Fim Conteudo -->
+            </div>
+            <ul class="pagination">
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+            </ul>
 
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
 
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
+      </div>
 
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
-
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
-
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
-
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
-
-       <div class="exercise-card">
-          <img src="https://placekitten.com/250/240" alt="Thumb"  >
-          <div class="card-container">
-            <h4><b>Tópicos:</b></h4>
-            <p>Dijkstra, Prim</p>
-          </div>
-        </div>
-        <!--
-        <div class="welcome-message">
-          <h1>Bem Vindo!</h1>
-          <p>Para ver os exercícios disponíveis, escolha uma cadeira dentre as disponíveis na lista ao lado :)</p>
-        </div>
-        -->
-    </div>
-    <!-- Fim Conteudo -->
-    </div>
-    <hr>
-  </div>
-</div>
-
-<footer class="container-fluid text-center">
-  <p>fecit anno MMXVII</p>
-</footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <footer class="container-fluid text-center">
+            <p>fecit anno MMXVII</p>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

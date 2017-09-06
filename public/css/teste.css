@@ -1,0 +1,79 @@
+.navbar,
+.sidebar{
+      background-color: #c1c1c1;
+}
+
+.navbar,
+.sidebar,
+.navbar-inverse > .container-fluid > .navbar-header > .navbar-toggle
+{
+      border: 1px solid #919191;
+}
+
+.navbar-inverse .navbar-collapse{
+      border-color: #919191;
+}
+
+.navbar-inverse .navbar-brand{
+      color: #333;
+}
+
+.navbar-header > a,
+.sidebar .sidebar-header{
+      font-family: 'Aldrich',sans-serif;
+}
+
+.wrapper{
+      display: flex;
+}
+
+.sidebar {
+      margin-right: 25px;
+      padding: 0;
+      height: 100vh;
+}
+
+.sidebar .sidebar-header{
+      padding: 10px;
+}
+
+ul.nav.navbar-nav > li > a {
+      color: #ffffff;
+}
+
+.sidebar ul{
+      margin: 15px 0;
+      padding: 0;
+      list-style: none;
+      background: #919191;
+}
+
+.sidebar > ul > li > a{
+      padding: 5px 10px;
+      display: block;
+      text-decoration: none;
+}
+
+.sidebar > ul > li > a,
+.navbar-inverse .navbar-nav>li>a{
+      color: #ffffff;
+      font-weight: bold;
+}
+
+.sidebar ul > li:not(.active) > a:hover,
+.navbar-inverse .navbar-nav>li:not(.active)>a:hover{
+      background-color: #242424;
+}
+
+.sidebar ul > li.active > a,
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover{
+      background: #ff9900;
+}
+
+
+@media (max-width: 768px) {
+      .sidebar {
+            display: none;
+      }
+}

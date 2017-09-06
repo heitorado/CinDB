@@ -7,57 +7,34 @@
       <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
       <link rel="stylesheet" href="../../public/css/mgmtpgs_style.css">
       <link rel="stylesheet" href="../../public/css/ie10-viewport-bug-workaround.css">
-
-      <!-- temp -->
-      <style media="screen">
-      .wrapper{
-            display: flex;
-      }
-
-      .sidebar {
-            background-color: #f1f1f1;
-            border-right: 1px solid #c1c1c1;
-            height: 100vh;
-            margin-right: 25px;
-      }
-
-      .sidebar ul{
-            list-style: none;
-            padding: 0;
-            background: #2277ff;
-            border: 1px solid #1155aa;
-            border-radius: 4px;
-      }
-
-
-      .sidebar ul li a{
-            border-radius: 4px;
-            padding: 5px 10px;
-            display: block;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-      }
-
-      .sidebar ul li.active a{
-            //border: 1px solid #885500;
-            background: #ff9900;
-      }
-      
-
-      .sidebar ul li:not(.active) a:hover{
-            //border: 1px solid #2277ff;
-            border-radius: 0;
-            background: #1155aa;
-      }
-      </style>
-      <!-- temp -->
+      <link href="https://fonts.googleapis.com/css?family=Aldrich|Fugaz+One|Quantico" rel="stylesheet">
+      <link rel="stylesheet" href="../../public/css/teste.css">
 </head>
 <body>
+      <nav class="navbar navbar-inverse visible-xs">
+            <div class="container-fluid">
+                  <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">CinDB</a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                              <li class="active"><a href="#">Gerenciar Professores</a></li>
+                              <li><a href="#">Gerenciar Cadeiras</a></li>
+                              <li><a href="#">Exercicios</a></li>
+                        </ul>
+                  </div>
+            </div>
+      </nav>
+
       <div class="container-fluid">
             <div class="wrapper row">
                   <!-- Inicio nav -->
-                  <nav class="sidebar col-md-2">
+                  <nav class="sidebar col-sm-12 col-md-2">
                         <!-- Nav Header -->
                         <div class="sidebar-header">
                               <h2>CinDB</h2>
@@ -70,7 +47,7 @@
                         </ul>
                   </nav>
                   <!-- Fim nav -->
-                  <div class="col-md-10">
+                  <div class="col-sm-12 col-md-10">
                         <h3>Gerenciador de Professores</h2>
                               <!-- modal trigger-->
                               <button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#modalCadastro">Adicionar Novo</button>
