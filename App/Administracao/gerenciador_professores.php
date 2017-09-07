@@ -1,3 +1,9 @@
+<?php $status = null;
+
+      if (!is_null(filter_input(INPUT_GET, 'status'))) {
+            $status = filter_input(INPUT_GET, 'status') == true ? "Professor cadastrado" : "Erro ao cadastrar";
+      }
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,8 +53,9 @@
                   </nav>
                   <!-- Fim nav -->
                   <div class="col-sm-12 col-md-10">
-                        <h3>Gerenciador de Professores</h2>
+                        <h3>Gerenciador de Professores</h3>
                               <!-- modal trigger-->
+                              <h4><?=$status ?></h4>
                               <button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#modalCadastro">Adicionar Novo</button>
                               <hr>
                               <table class="table table-bordered">
@@ -95,10 +102,10 @@
                               </div>
                               <div class="modal-body">
                                     <!--form para cadastro de novas cadeiras-->
-                                    <form method="post" name="novo-professor" action="../Core/form_cadeiras_tags.php">
+                                    <form method="post" name="novo-professor" action="../../Core/ProfessoresControle.php">
                                           <div class="form-group">
                                                 <label for="nome" data-toggle="tooltip" title="Insira o nome do professor">Nome:</label>
-                                                <input class="form-control" type="text" name="nome" id="nome">
+                                                <input class="form-control" type="text" name="nome" id="nome" required>
                                           </div>
 
                                           <strong data-toggle="tooltip" title="Selecione as cadeiras que este professor leciona.">Cadeiras:</strong>
