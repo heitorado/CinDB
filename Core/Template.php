@@ -30,11 +30,3 @@ class Template
             return $output;
       }
 }
-
-$t = new Template("../App/Administracao/_template.php");
-$t->set("path", "../");
-$t->set("title", "CINDB TESTE");
-$t->set("menu", "<li><a href='#'>dd</a></li>");
-$t->set("pagTitle", "CINDB TESTE");
-$t->set("content", "teste");
-echo $t->output();

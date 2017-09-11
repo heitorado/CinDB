@@ -21,8 +21,10 @@
                         <a class="navbar-brand" href="#">CinDb</a>
                   </div>
                   <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                              [@menu]
+                        <ul id="navbarList" class="nav navbar-nav">
+                              <li><a href="gerenciador_professores.php">Gerenciar Professores</a></li>
+                              <li><a href="gerenciador_professores.php">Gerenciar Professores</a></li>
+                              <li><a href="gerenciador_teste.php">Gerenciar Professores</a></li>
                         </ul>
                   </div>
             </div>
@@ -37,18 +39,11 @@
                               <h2>CinDb</h2>
                         </div>
 
-                        <ul>
-                              [@menu]
+                        <ul id="sidebarList">
+                              <li><a href="gerenciador_professores.php">Gerenciar Professores</a></li>
+                              <li><a href="gerenciador_professores.php">Gerenciar Professores</a></li>
+                              <li><a href="gerenciador_teste.php">Gerenciar Professores</a></li>
                         </ul>
                   </nav>
                   <!-- Fim nav -->
                   <div class="col-sm-12 col-md-10">
-                        <h3>[@pagTitle]</h3>
-                        <?php require_once "[@content]" ?>
-                  </div>
-            </div>
-      </div>
-      <script src="[@path]/public/js/jquery.min.js"></script>
-      <script type="text/javascript" src="[@path]/public/js/bootstrap.min.js"></script>
-</body>
-</html>
