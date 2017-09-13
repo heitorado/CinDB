@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>[@title]</title>
+      <script src="[@path]/public/js/jquery.min.js"></script>
       <link rel="stylesheet" href="[@path]/public/css/bootstrap.min.css">
       <link rel="stylesheet" href="[@path]/public/css/mgmtpgs_style.css">
       <link rel="stylesheet" href="[@path]/public/css/ie10-viewport-bug-workaround.css">

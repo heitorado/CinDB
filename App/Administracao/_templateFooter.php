@@ -1,7 +1,6 @@
 </div>
 </div>
 </div>
-<script src="[@path]/public/js/jquery.min.js"></script>
 <script type="text/javascript" src="[@path]/public/js/bootstrap.min.js"></script>
 <script type="text/javascript">
       // PEGA O PAGINA ATUAL

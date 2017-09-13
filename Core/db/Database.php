@@ -116,6 +116,11 @@ class Database
 	{
 		$this->conexao->rollBack();
 	}
+
+	public function lastInsertId()
+	{
+		return $this->conexao->lastInsertId();
+	}
 }
 
 ?>
