@@ -43,6 +43,7 @@ class ProfessoresControle
       // REALIZA A INCLUSAO DE UM PROFESSOR
       public function insertProfessores()
       {
+            $this->dbFun->abrirConexao();
             // PEGA AS CADEIRAS SELECIONADAS
             $cadeiras = [];
             if(isset($_POST['cadeiras']))
@@ -55,7 +56,7 @@ class ProfessoresControle
 
             // FILTRA O QUE FOI DIGITADO RETIRANDO TAGS DO CARACTER
             $this->nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-            
+
             $query = "INSERT INTO professores (nome) VALUES (:nome)";
             $this->status = $this->dbFun->insert($query,[":nome" => $this->nome]);
 
@@ -77,16 +78,19 @@ class ProfessoresControle
             // REDIRECIONA INDICANDO SUCESSO OU FALHA
             if (!$this->status) {
                   $this->dbFun->rollBack(); // SALVA MUDANÇAS
+                  $this->dbFun->fecharConexao();
                   header("Location:../App/Administracao/gerenciador_professores.php?insertStatus=false");
             }else {
                   $this->dbFun->commit(); // CANCELA MUDANÇAS
+                  $this->dbFun->fecharConexao();
                   header("Location:../App/Administracao/gerenciador_professores.php?insertStatus=true");
             }
       }
-      
+
       // ALTERA DADOS DE UM PROFESSOR
       public function updateProfessor()
       {
+            $this->dbFun->abrirConexao();
             // PEGA AS CADEIRAS SELECIONADAS
             $cadeiras = [];
             if(isset($_POST['cadeiras']))
@@ -103,14 +107,14 @@ class ProfessoresControle
 
             $query = "UPDATE professores SET nome = :nome WHERE idprofessor = :idprofessor";
             $this->status = $this->dbFun->update($query,[":nome" => $this->nome, ":idprofessor" => $this->idprofessor]);
-            
+
             // CASO A MUDANÇA FOI REALIZADA COM SUCESSO
             if ($this->status) {
                   // APAGA O RELACIONAMENTO JA CADASTRADO
                   $query = "DELETE FROM professores_has_cadeiras WHERE professores_idprofessor = :idprofessor";
                   $this->status = $this->dbFun->delete($query, [":idprofessor" => $this->idprofessor]);
             }
-            
+
             // CASO NÃO DEU ERRO AO DELETAR E EXISTE CADEIRAS
             if (sizeof($cadeiras) > 0 && $this->status)
             {
@@ -129,9 +133,11 @@ class ProfessoresControle
             // REDIRECIONA INDICANDO SUCESSO OU FALHA
             if (!$this->status) {
                   $this->dbFun->rollBack();
+                  $this->dbFun->fecharConexao();
                   header("Location:../App/Administracao/gerenciador_professores.php?updateStatus=false");
             }else {
                   $this->dbFun->commit();
+                  $this->dbFun->fecharConexao();
                   header("Location:../App/Administracao/gerenciador_professores.php?updateStatus=true");
             }
       }
@@ -139,6 +145,7 @@ class ProfessoresControle
       // REALIZA A EXCLUSAO DE UM PROFESSOR
       public function deleteProfessores()
       {
+            $this->dbFun->abrirConexao();
             $this->idprofessor = filter_input(INPUT_GET, 'delete', FILTER_SANITIZE_STRING);
             $this->dbFun->transaction();
             $query = "DELETE FROM professores_has_cadeiras WHERE professores_idprofessor = :idprofessor";
@@ -152,9 +159,11 @@ class ProfessoresControle
             // REDIRECIONA INDICANDO SUCESSO OU FALHA
             if (!$this->status) {
                   $this->dbFun->rollBack();
+                  $this->dbFun->fecharConexao();
                   header("Location:../App/Administracao/gerenciador_professores.php?deleteStatus=false");
             }else {
                   $this->dbFun->commit();
+                  $this->dbFun->fecharConexao();
                   header("Location:../App/Administracao/gerenciador_professores.php?deleteStatus=true");
             }
       }
@@ -162,6 +171,7 @@ class ProfessoresControle
       // BUSCA TODOS O PROFESSORES
       public function getProfessores()
       {
+            $this->dbFun->abrirConexao();
             $query = "SELECT idprofessor, " .
             " professores.nome, " .
             " (SELECT group_concat(cadeiras.nome separator ', ')" .
@@ -171,12 +181,13 @@ class ProfessoresControle
             " ) AS cadeiras" .
             " FROM professores;";
             $dados = $this->dbFun->select($query);
-            //var_dump($dados);
+            $this->dbFun->fecharConexao();
             return $dados;
       }
 
       public function getProfessor()
       {
+            $this->dbFun->abrirConexao();
             $this->idprofessor = filter_input(INPUT_POST, 'buscarProfessor', FILTER_SANITIZE_STRING);
 
             $query = "SELECT idprofessor, " .
@@ -189,13 +200,16 @@ class ProfessoresControle
             " FROM professores" .
             " WHERE idprofessor = ?";
             $dados = $this->dbFun->select($query, [$this->idprofessor], false);
-            //var_dump($dados);
+            $this->dbFun->fecharConexao();
             return json_encode($dados);
       }
 
       public function getCadeiras()
       {
-            return $this->dbFun->select("SELECT * FROM cadeiras");
+            $this->dbFun->abrirConexao();
+            $dados = $this->dbFun->select("SELECT * FROM cadeiras");
+            $this->dbFun->fecharConexao();
+            return $dados;
       }
 
       // CARREGA A PARTE SUPERIOR DO TEMPLATE
