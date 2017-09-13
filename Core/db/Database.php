@@ -1,7 +1,7 @@
 <?php
 
 /**
-*  CLASSE RESPONSAVEL POR CRIAR A CONEXÃO COM O BANCO DE DADOS, ABRIR E FECHAR CONEXÃO
+*  CLASSE RESPONSAVEL POR CRIAR A CONEXÃO COM O BANCO DE DADOS, ABRIR E FECHAR CONEXÃO, E REALIZAR AÇÕES NO BANCO
 **/
 class Database
 {
@@ -42,7 +42,11 @@ class Database
 	{
 		$this->conexao = null;
 	}
-
+	
+	// REALIZA O SELECT. PARAMETROS:
+	// $query = QUERY PARA O SELECT
+	// $params = VALORES. SE A QUERY TIVER '?' COMO PARAMETRO, USAR ARRAY SEM KEY. SE TIVER ':parametro', USAR ARRAY COM KEY COM MESMO PARAMETRO
+	// $fetchAll = POR PADRAO BUSCA TODOS. FALSE IRA BUSCAR APENAS 1 RESULTADO
 	public function select($query, $params = [], $fetchAll = true)
 	{
 		try
@@ -62,6 +66,9 @@ class Database
 		}
 	}
 
+	// REALIZA O INSERT. PARAMETROS:
+	// $query = QUERY PARA O INSERT
+	// $params = VALORES. SE A QUERY TIVER '?' COMO PARAMETRO, USAR ARRAY SEM KEY. SE TIVER ':parametro', USAR ARRAY COM KEY COM MESMO PARAMETRO
 	public function insert($query, $params = [])
 	{
 		if (strpos($query, "INSERT") !== false) {
@@ -71,6 +78,9 @@ class Database
 		}
 	}
 
+	// REALIZA O UPDATE. PARAMETROS:
+	// $query = QUERY PARA O UPDATE
+	// $params = VALORES. SE A QUERY TIVER '?' COMO PARAMETRO, USAR ARRAY SEM KEY. SE TIVER ':parametro', USAR ARRAY COM KEY COM MESMO PARAMETRO
 	public function update($query, $params = [])
 	{
 		if (strpos($query, "UPDATE") !== false) {
@@ -80,6 +90,9 @@ class Database
 		}
 	}
 
+	// REALIZA O DELETE. PARAMETROS:
+	// $query = QUERY PARA O DELETE
+	// $params = VALORES. SE A QUERY TIVER '?' COMO PARAMETRO, USAR ARRAY SEM KEY. SE TIVER ':parametro', USAR ARRAY COM KEY COM MESMO PARAMETRO
 	public function delete($query, $params = [])
 	{
 		if (strpos($query, "DELETE") !== false) {
@@ -89,6 +102,9 @@ class Database
 		}
 	}
 
+	// REALIZA AS MUDANÇAS NO BANCO DE DADOS. PARAMETROS:
+	// $query = QUERY PARA O AÇÃO
+	// $params = VALORES. SE A QUERY TIVER '?' COMO PARAMETRO, USAR ARRAY SEM KEY. SE TIVER ':parametro', USAR ARRAY COM KEY COM MESMO PARAMETRO
 	private function dataManager($query, $params = [])
 	{
 		try
@@ -102,21 +118,25 @@ class Database
 		}
 	}
 
+	// INICIA A TRANSAÇÃO
 	public function transaction()
 	{
 		$this->conexao->beginTransaction();
 	}
 
+	// EFETUA A TRANSAÇÃO
 	public function commit()
 	{
 		$this->conexao->commit();
 	}
 
+	// CANCELA A TRANSAÇÃO
 	public function rollBack()
 	{
 		$this->conexao->rollBack();
 	}
 
+	// RETORNA O ULTIMO ID
 	public function lastInsertId()
 	{
 		return $this->conexao->lastInsertId();
