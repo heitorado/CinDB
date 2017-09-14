@@ -113,8 +113,7 @@
 			var container = $(document.createElement('div')).attr('class', 'card-container');
 			var topico = $(document.createElement('h4')).append('hey');
 			var enun = $(document.createElement('p'))
-			.attr('class', 'overflow')
-			.append(texto);
+			.append(texto.substring(0, 145) + '...');
 			
 			container.append(topico, enun);
 			
