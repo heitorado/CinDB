@@ -24,7 +24,7 @@
 .wrapper{
       display: flex;
       /* teste */
-      min-height: 83vh; 
+      min-height: 100vh; 
 }
 
 @media screen and (max-width: 767px) {
