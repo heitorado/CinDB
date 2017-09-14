@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
       <title>CinDB</title>
@@ -19,11 +19,6 @@
                         </button>
                         <a class="navbar-brand"> CinDb </a>
                   </div>
-                  <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav navbar-right">
-                              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                  </div>
             </div>
       </nav>
 
@@ -39,29 +34,29 @@
                               <!-- left para ajustar a posição -->
                               <ul class="dropdown-menu dropdown-menu-left">
                                     <!-- periodo -->
-                                    <li class="dropdown-header">
+                                    <!--li class="dropdown-header">
                                           Primeiro Período
                                           <!-- materia -->
-                                          <ul>
+                                          <!--ul>
                                                 <li><a href="#">Introdução à Programação</a></li>
                                                 <li><a href="#">AVLC</a></li>
                                                 <li><a href="#">Matemática Discreta</a></li>
                                           </ul>
                                           <!-- fim materia -->
-                                    </li>
+                                    <!--/li>
                                     <!-- fim periodo -->
 
                                     <!-- periodo -->
-                                    <li class="dropdown-header">
+                                    <!--li class="dropdown-header">
                                           Segundo Período
                                           <!-- materia -->
-                                          <ul>
+                                          <!--ul>
                                                 <li><a href="#">Algoritmos</a></li>
                                                 <li><a href="#">Lógica</a></li>
                                                 <li><a href="#">Sistemas Digitais</a></li>
                                           </ul>
                                           <!-- fim materia -->
-                                    </li>
+                                    <!--/li-->
                                     <!-- fim periodo -->
                               </ul>
                         </div>
@@ -70,9 +65,9 @@
                               <p>Filtros:</p>
                         </div>
                         <div class="tags">
-                              <label><input type="checkbox" value="">Assunto 1</label><br>
+                              <!--label><input type="checkbox" value="">Assunto 1</label><br>
                               <label><input type="checkbox" value="">Assunto 2</label><br>
-                              <label><input type="checkbox" value="">Assunto 3</label><br>
+                              <label><input type="checkbox" value="">Assunto 3</label><br-->
                         </div>
                   </div> <!-- OBS- col-sm-12 (celular), col-md-(metade da tela do meu note) -->
                   <!-- fim Barra lateral esquerda -->
@@ -80,61 +75,23 @@
                   <!-- Conteudo -->
                   <div id="indexContent" class="col-sm-12 col-md-10 text-center" style="margin: 10px auto;">
                         <!-- Col removido temp -->
-                        <div class="exercise-card">
+                        <!--div class="exercise-card">
                               <img src="https://placekitten.com/250/240" alt="Thumb"> <!-- OBS- TIREI CSS INLINE PQ VC JA TEM UMA CLASS PRA IMAGEM -->
-                              <div class="card-container">
+                              <!--div class="card-container">
                                     <h4><b>Tópicos:</b></h4>
                                     <p>Dijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, Prim</p>
                               </div>
-                        </div>
+                        </div-->
 
-                        <div class="exercise-card">
-                              <img src="https://placekitten.com/250/240" alt="Thumb">
-                              <div class="card-container">
-                                    <h4><b>Tópicos:</b></h4>
-                                    <p>Dijkstra, Prim</p>
-                              </div>
-                        </div>
-
-                        <div class="exercise-card">
-                              <img src="https://placekitten.com/250/240" alt="Thumb"  >
-                              <div class="card-container">
-                                    <h4><b>Tópicos:</b></h4>
-                                    <p>Dijkstra, Prim</p>
-                              </div>
-                        </div>
-
-                        <div class="exercise-card">
-                              <img src="https://placekitten.com/250/240" alt="Thumb"  >
-                              <div class="card-container">
-                                    <h4><b>Tópicos:</b></h4>
-                                    <p>Dijkstra, Prim</p>
-                              </div>
-                        </div>
-
-                        <div class="exercise-card">
-                              <img src="https://placekitten.com/250/240" alt="Thumb"> <!-- OBS- TIREI CSS INLINE PQ VC JA TEM UMA CLASS PRA IMAGEM -->
-                              <div class="card-container">
-                                    <h4><b>Tópicos:</b></h4>
-                                    <p>Dijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, PrimDijkstra, Prim</p>
-                              </div>
-                        </div>
-
-                        <div class="exercise-card">
-                              <img src="https://placekitten.com/250/240" alt="Thumb"  >
-                              <div class="card-container">
-                                    <h4><b>Tópicos:</b></h4>
-                                    <p>Dijkstra, Prim</p>
-                              </div>
-                        </div>
                         
-                        <ul class="pagination">
+                        
+                        <!--ul class="pagination">
                               <li><a href="#">1</a></li>
                               <li class="active"><a href="#">2</a></li>
                               <li><a href="#">3</a></li>
                               <li><a href="#">4</a></li>
                               <li><a href="#">5</a></li>
-                        </ul>
+                        </ul-->
                   </div>
                   <!-- Fim Conteudo -->
             </div>
@@ -144,6 +101,46 @@
             <p>fecit anno MMXVII</p>
       </footer>
       <script src="../public/js/jquery.min.js"></script>
+      <script>
+      		for(i = 0; i < 6; i++){
+      			var texto = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit enim, cursus viverra enim eget, mattis cursus diam. Praesent nec justo elementum, ornare libero eget, sollicitudin sapien. Donec sem enim, tristique non luctus sit amet, varius quis ligula. Curabitur dictum enim a eros pretium aliquam. Ut luctus lorem sit amet turpis mollis, nec ornare augue hendrerit. Nunc facilisis mi nec dignissim ultricies. Proin pharetra interdum lacus ac molestie. Sed euismod, risus eget consectetur dignissim, lorem odio pellentesque metus, vel cursus ante dui at libero. Phasellus velit neque, finibus in rhoncus tristique, tincidunt quis neque. Sed lectus elit, vestibulum ut velit in, congue cursus libero. Morbi finibus, mauris eget mattis cursus, tortor magna tempor neque, eu aliquet elit arcu molestie eros.';
+      		
+			var card = $(document.createElement('div')).attr( 'class', 'exercise-card' );
+			var img = $(document.createElement('img')).attr('src','http://lorempixel.com/400/200/')
+				.attr('alt','http://lorempixel.com/400/200/')
+				.attr('title','http://lorempixel.com/400/200/');
+			
+			var container = $(document.createElement('div')).attr('class', 'card-container');
+			var topico = $(document.createElement('h4')).append('hey');
+			var enun = $(document.createElement('p'))
+			.attr('class', 'overflow')
+			.append(texto);
+			
+			container.append(topico, enun);
+			
+			card.append(img,container);		
+		
+			$("#indexContent").append(card);
+		}
+		
+		var pagination = $(document.createElement('ul')).attr( 'class', 'pagination');
+		var pags = [];
+		
+		for(i = 0; i < 6; i++){
+			pag = $(document.createElement('li'));
+			if(i == 1)
+				pag.attr( 'class', 'active');
+				
+			pag.append($(document.createElement('a'))
+				.attr( 'href', '#pagination')
+				.append(i+1))
+			pags.push(pag);
+		}
+		
+		pagination.append(pags);
+		$("#indexContent").append(pagination);
+      </script>
+      
       <script src="../public/js/bootstrap.min.js"></script>
 </body>
 </html>
