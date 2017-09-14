@@ -23,6 +23,7 @@
 
 .wrapper{
       display: flex;
+      min-height: 83vh;
 }
 
 @media screen and (max-width: 767px) {
@@ -113,18 +114,6 @@
 	font-weight : bold;
 }
 
-.overflow {
-	display: -webkit-box;
-	display: -ms-box;
-	display: -moz-box;
-	display: -o-box;
-	
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
 #indexContent > .pagination{
       display: table;
       margin: 20px auto;
@@ -136,6 +125,8 @@ footer {
       color: white;
       padding: 15px;
 }
+
+
 /* ========================= end index ========================= */
 
 /* ========================= admin ========================= */
