@@ -148,13 +148,9 @@ class ProfessoresControle
             $this->dbFun->abrirConexao();
             $this->idprofessor = filter_input(INPUT_GET, 'delete', FILTER_SANITIZE_STRING);
             $this->dbFun->transaction();
-            $query = "DELETE FROM professores_has_cadeiras WHERE professores_idprofessor = :idprofessor";
-            $this->status = $this->dbFun->delete($query, [":idprofessor" => $this->idprofessor]);
 
-            if ($this->status) {
-                  $query = "DELETE FROM professores WHERE idprofessor = :idprofessor";
-                  $this->status = $this->dbFun->delete($query, [":idprofessor" => $this->idprofessor]);
-            }
+            $query = "DELETE FROM professores WHERE idprofessor = :idprofessor";
+            $this->status = $this->dbFun->delete($query, [":idprofessor" => $this->idprofessor]);
 
             // REDIRECIONA INDICANDO SUCESSO OU FALHA
             if (!$this->status) {
