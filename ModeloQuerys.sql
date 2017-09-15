@@ -39,9 +39,21 @@ SELECT distinct idexercicios,
  WHERE professores_has_cadeiras_professores_idprofessor = professores.idprofessor
    AND professores_has_cadeiras_cadeiras_idcadeiras = cadeiras.idcadeiras
    AND cadeiras.idcadeiras = 1
-   and exercicios_idexercicios = idexercicios
+   AND exercicios_idexercicios = idexercicios
            AND idtags = tags_idtags
-           and idtags in (3);
+           AND idtags IN (1);
+           
+           
+-- CADEIRAS E TAGS
+SELECT * FROM cadeiras;
+SELECT * FROM tags;
+
+SELECT * FROM cadeiras_has_tags;
+
+SELECT idtags, tags.nome 
+FROM tags, cadeiras_has_tags
+WHERE tags.idtags = cadeiras_has_tags.tags_idtags
+  AND cadeiras_has_tags.cadeiras_idcadeiras = 1;
    
   
 

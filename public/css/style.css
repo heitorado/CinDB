@@ -84,7 +84,7 @@
       font-weight: lighter;
 }
 
-#indexContent > .exercise-card{
+#indexContent > #exercicios > .exercise-card{
       margin: 5px 10px;
       width: 250px;
       /*min-height: 310px;*/
@@ -97,25 +97,25 @@
       transition: 0.3s;
 }
 
-#indexContent > .exercise-card:hover {
+#indexContent > #exercicios > .exercise-card:hover {
       box-shadow: 4px 8px 16px 0px rgba(0,0,0,0.3);
 }
 
-#indexContent > .exercise-card img{
+#indexContent > #exercicios > .exercise-card img{
       border-radius: 5px 5px 0 0;
       width:100%;
 }
 
-#indexContent > .exercise-card > .card-container{
+#indexContent > #exercicios > .exercise-card > .card-container{
       padding: 2px 16px;
       text-align: left;
 }
 
-#indexContent > .exercise-card > .card-container > h4{
+#indexContent > #exercicios > .exercise-card > .card-container > h4{
 	font-weight : bold;
 }
 
-#indexContent > .pagination{
+#indexContent > #pagination > .pagination{
       display: table;
       margin: 20px auto;
 }

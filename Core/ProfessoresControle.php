@@ -33,6 +33,7 @@ class ProfessoresControle
       public $idprofessor;
       public $nome;
       public $status;
+      public $dbFun;
 
       // CRIA A INSTANCIA DA CLASSE Database PASSANDO A TABELA QUE VAI MANIPULAR.
       function __construct()

@@ -31,6 +31,7 @@ class Database
 				$this->conexao = new PDO($this->dsn, $this->user, $this->password);
 				$this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$this->conexao->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+				$this->conexao->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf8'");
 			} catch (PDOException $e) {
 				throw new Exception($e->getMessage());
 			}
@@ -42,7 +43,7 @@ class Database
 	{
 		$this->conexao = null;
 	}
-	
+
 	// REALIZA O SELECT. PARAMETROS:
 	// $query = QUERY PARA O SELECT
 	// $params = VALORES. SE A QUERY TIVER '?' COMO PARAMETRO, USAR ARRAY SEM KEY. SE TIVER ':parametro', USAR ARRAY COM KEY COM MESMO PARAMETRO
