@@ -99,11 +99,18 @@
 
 #indexContent > #exercicios > .exercise-card:hover {
       box-shadow: 4px 8px 16px 0px rgba(0,0,0,0.3);
+      cursor: pointer;
 }
 
 #indexContent > #exercicios > .exercise-card img{
       border-radius: 5px 5px 0 0;
       width:100%;
+      opacity: .5;
+      transition: .7s;
+}
+
+#indexContent > #exercicios > .exercise-card:hover img{
+      opacity: 1;
 }
 
 #indexContent > #exercicios > .exercise-card > .card-container{
@@ -125,13 +132,49 @@ footer {
       background-color: #555;
       color: white;
       padding: 15px;
-	/*position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;*/
 }
 
+#modalExercicio > .modal-dialog{
+      width: 60%;
+}
+
+.modalExercicioImg{
+      margin: 5px auto;
+      text-align:center;
+}
+
+.modalExercicioImg > img,
+.modal-footer > .exercicioSolucao > #solucaoImg > img{
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+}
+
+.modal-body h5,
+.modal-footer > .exercicioSolucao h5{
+      font-weight: bold;
+}
+
+.modal-body p{
+      text-align: justify;
+}
+
+p.exercicioFooter{
+      text-align:right;
+      font-weight: bold;
+}
+
+p.exercicioFooter > span{
+      font-weight: normal;
+      font-style: italic;
+}
+
+.modal-footer > .exercicioSolucao{
+      text-align: left;
+      display: none;
+}
 
 /* ========================= end index ========================= */
 

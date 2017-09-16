@@ -16,6 +16,11 @@ if (isset($_POST['idCadeira'])) {
       echo json_encode($exercicios->getExercicios());
 }
 
+if (isset($_POST['idexercicioSolucao'])) {
+      $exercicios = new ExerciciosIndexControle();
+      echo json_encode($exercicios->getSolucao());
+}
+
 /**
 *
 */
@@ -98,6 +103,19 @@ class ExerciciosIndexControle
 
             $this->dbFun->abrirConexao();
             $dados = $this->dbFun->select($query, [$idcadeiras]);
+            $this->dbFun->fecharConexao();
+
+            return $dados;
+      }
+
+      public function getSolucao()
+      {
+            $idExercicio = filter_input(INPUT_POST, 'idexercicioSolucao', FILTER_SANITIZE_STRING);
+
+            $query = "SELECT * FROM solucoes WHERE exercicios_idexercicios = ?";
+
+            $this->dbFun->abrirConexao();
+            $dados = $this->dbFun->select($query, [$idExercicio]);
             $this->dbFun->fecharConexao();
 
             return $dados;
