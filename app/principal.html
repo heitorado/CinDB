@@ -4,13 +4,13 @@
       <title>CinDB</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script src="../public/js/jquery.min.js"></script>
-      <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+      
+      <link rel="stylesheet" href="public/css/bootstrap.min.css">
       <!-- Custom styles for this template -->
-      <link href="../public/css/style.css" rel="stylesheet">
+      <link href="public/css/style.css" rel="stylesheet">
 </head>
 <body>
-      <nav id="indexNav" class="navbar navbar-inverse">
+      <nav id="indexNav" class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                   <div class="navbar-header">
                         <a class="navbar-brand"> CinDb </a>
@@ -22,15 +22,19 @@
             <div class="wrapper row">
                   <!-- Barra lateral esquerda -->
                   <div id="indexSidebar" class="col-sm-12 col-md-2 sidebar">
-                        <div class="dropdown">
-                              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                    Selecione...
-                                    <span class="caret"></span>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="btn-group btn-sm">
+                              <button type="button" class="btn btn-sucess dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Selecione...
                               </button>
-                              <!-- left para ajustar a posição -->
-                              <ul id="cadeiras" class="dropdown-menu dropdown-menu-left">
-
-                              </ul>
+                              <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                              <a class="dropdown-item" href="#">Something else here</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">Separated link</a>
+                              </div>
                         </div>
 
                         <div class="search">
@@ -86,8 +90,12 @@
             </div>
       </div>
       <!-- END MODAL -->
-      <script src="../public/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="../public/js/jquery.twbsPagination.min.js"></script>
-      <script type="text/javascript" src="../public/js/indexExercicios.js"></script>
+      <script src="public/js/jquery.min.js"></script>
+      <script src="public/js/popper.min.js"></script>
+      <script src="public/js/bootstrap.min.js"></script>
+      <!--
+      <script type="text/javascript" src="public/js/jquery.twbsPagination.min.js"></script>
+      <script type="text/javascript" src="public/js/indexExercicios.js"></script>
+      -->
 </body>
 </html>

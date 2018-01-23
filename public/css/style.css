@@ -47,6 +47,7 @@
 #indexNav.navbar {
       margin-bottom: 0;
       border-radius: 0;
+      color: white;
 }
 
 #indexNav.navbar-inverse .navbar-brand:hover,
