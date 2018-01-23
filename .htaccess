@@ -1,6 +1,6 @@
 #Search for principal instead of index.
 
-DirectoryIndex principal.html index.html
+DirectoryIndex app/principal.html index.html
 
 #Disable directory listings [Nao exibe os arquivos em diretorios, escondendo do publico e de buscas]
 Options -Indexes
