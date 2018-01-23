@@ -2,7 +2,50 @@
   <h1 class="h2">Gerenciador de Professores</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
       <button class="btn btn-sm btn-outline-secondary">
+      <span data-feather="plus-circle"></span>
       Cadastrar Novo
       </button>
   </div>
 </div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cadeiras</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>exemplo_nome</td>
+                <td>cadeira1, cadeira2, cadeira3, cadeira4, cadeira5, cadeira6</td>
+                <td>
+                    <a class="" href="#">
+                      <span data-feather="edit"></span>
+                      Editar
+                    </a>
+
+                    <a class="" href="#">
+                      <span data-feather="minus-circle"></span>
+                      Excluir
+                    </a>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
+
+<!-- Icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
