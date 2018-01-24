@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
     <h1 class="h2">Cadastrar novo Exercício</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
-        <a class="backButton">
-            <button class="btn btn-sm btn-outline-secondary backButton">
+        <button class="btn btn-sm btn-outline-secondary" id="backButton">
+            
             <span data-feather="chevrons-left"></span>
             Voltar
-            </button>
-        </a>
+            
+        </button>
     </div>
   </div>
   
@@ -18,40 +18,40 @@
                     <label for="exerciseImgUpload">Carregue uma Imagem (opcional)</label>
                     <input type="file" class="form-control-file" id="exerciseImgUpload">
                 </div>
-            </form>
+            
 
-            <div class="form-group">
-                <label for="exerciseText">Enunciado do Exercício: </label>
-                <textarea class="form-control" id="exerciseText" rows="3"></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="exerciseText">Enunciado do Exercício: </label>
+                    <textarea class="form-control" id="exerciseText" rows="3"></textarea>
+                </div>
 
-            <div class="form-group">
-                <label for="selectCadeira">Selecione a Cadeira do Exercício:</label>
-                <select multiple class="form-control" id="selectCadeira">
-                  <option>cadeira1</option>
-                  <option>cadeira2</option>
-                  <option>cadeira3</option>
-                  <option>cadeira4</option>
-                  <option>cadeira5</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="selectCadeira">Selecione a Cadeira do Exercício:</label>
+                    <select multiple class="form-control" id="selectCadeira">
+                    <option>cadeira1</option>
+                    <option>cadeira2</option>
+                    <option>cadeira3</option>
+                    <option>cadeira4</option>
+                    <option>cadeira5</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="selectProf">Selecione o Professor que Criou:</label>
-                <select multiple class="form-control" id="selectProf">
-                  <option>prof1</option>
-                  <option>prof2</option>
-                  <option>prof3</option>
-                  <option>prof4</option>
-                  <option>prof5</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="selectProf">Selecione o Professor que Criou:</label>
+                    <select multiple class="form-control" id="selectProf">
+                    <option>prof1</option>
+                    <option>prof2</option>
+                    <option>prof3</option>
+                    <option>prof4</option>
+                    <option>prof5</option>
+                    </select>
+                </div>
 
-            <form action="">
                 <div class="form-group">
                     <label for="solutionImgUpload">Adicione uma Foto como Solução (opcional)</label>
                     <input type="file" class="form-control-file" id="solutionImgUpload">
                 </div>
+                
             </form>
         </div>
       </div>
@@ -64,20 +64,20 @@
   </script>
 
 <script>
-        var url;
-        var prevurl;
-
-        $('.content-changer').click(function(event){   
+         $('#backButton').click(function(event){
             event.preventDefault();
-            prevurl = url;
-            url = $(this).attr('href');
-            window.history.pushState(url, url, url);
-            $('#main_content').load('app/admin/'+ url);
-         });
+            
+            
+            var sp;
+            sp = url;
+            url = prevurl;
+            prevurl = sp;
 
-         $('.backButton').click(function(event){
-            event.preventDefault();
-            $('#main_content').load('app/admin/' + prevurl);
-         });
-         
-    </script>
+            //console.log("[F]url atual: " + url);
+            //console.log("[F]url anterior: " + prevurl);
+
+            
+            $('#main_content').load('app/admin/' + url);
+            
+         });   
+</script>

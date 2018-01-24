@@ -64,12 +64,13 @@
                   Tags
                 </a>
               </li>
+              <!-- to be removed
               <li class="nav-item">
                 <a class="nav-link content-changer" href="form_exercicios.html">
                   <span data-feather="layers"></span>
                   nao clik
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </nav>
@@ -96,21 +97,23 @@
     </script>
 
     <script>
-        var url;
+        var url = "admin_dashboard_default.html";
         var prevurl;
 
-        $('.content-changer').click(function(event){   
+        $(document).on('click', '.content-changer' ,function(event){   
+            console.log("event activacted...");
             event.preventDefault();
             prevurl = url;
+            //console.log("url anterior: " + prevurl);
+
             url = $(this).attr('href');
-            window.history.pushState(url, url, url);
+            //console.log("url atual: " + url);
+
+            //window.history.pushState(url, url, url);
             $('#main_content').load('app/admin/'+ url);
          });
 
-         $('.backButton').click(function(event){
-            event.preventDefault();
-            $('#main_content').load('app/admin/' + prevurl);
-         });
+         
 
         var init = 'app/admin/admin_dashboard_default.html';
         $('#main_content').load(init);
