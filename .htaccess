@@ -1,7 +1,7 @@
-#Search for principal instead of index.
+RewriteEngine On
+RewriteBase /CinDB/
 
-DirectoryIndex app/principal.html index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 
-#Disable directory listings [Nao exibe os arquivos em diretorios, escondendo do publico e de buscas]
-Options -Indexes
-
+RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]
