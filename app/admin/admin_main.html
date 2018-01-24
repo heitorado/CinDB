@@ -9,11 +9,13 @@
 
     <title>sudo CinDB</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="./public/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
     <link href="./public/css/admin_page.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Bootstrap core CSS -->
+    <link href="./public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JQUERY Loading -->
     <script src="./public/js/jquery.min.js"></script>   
   </head>
 
@@ -33,7 +35,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link content-changer" href="admin_dashboard_default.html">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(current)</span>
                 </a>
@@ -63,7 +65,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link content-changer" href="#">
+                <a class="nav-link content-changer" href="form_exercicios.html">
                   <span data-feather="layers"></span>
                   nao clik
                 </a>
@@ -94,11 +96,20 @@
     </script>
 
     <script>
+        var url;
+        var prevurl;
+
         $('.content-changer').click(function(event){   
             event.preventDefault();
-            var url = $(this).attr('href');
+            prevurl = url;
+            url = $(this).attr('href');
             window.history.pushState(url, url, url);
             $('#main_content').load('app/admin/'+ url);
+         });
+
+         $('.backButton').click(function(event){
+            event.preventDefault();
+            $('#main_content').load('app/admin/' + prevurl);
          });
 
         var init = 'app/admin/admin_dashboard_default.html';
