@@ -14,44 +14,51 @@
       <div class="row">
         <div class="col-md-12">
             <form action="">
-                <div class="form-group">
-                    <label for="exerciseImgUpload">Carregue uma Imagem (opcional)</label>
-                    <input type="file" class="form-control-file" id="exerciseImgUpload">
-                </div>
-            
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea class="form-control" id="exerciseText" rows="10" style="resize: none;" required></textarea>
+                            <label for="exerciseText">Enunciado do Exercício</label>
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="exerciseText">Enunciado do Exercício: </label>
-                    <textarea class="form-control" id="exerciseText" rows="3"></textarea>
-                </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="arquivoEnunciado">
+                                <label class="custom-file-label" for="validatedCustomFile">Carregue uma Imagem (opcional)</label>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="selectCadeira">Selecione a Cadeira do Exercício:</label>
-                    <select multiple class="form-control" id="selectCadeira">
-                    <option>cadeira1</option>
-                    <option>cadeira2</option>
-                    <option>cadeira3</option>
-                    <option>cadeira4</option>
-                    <option>cadeira5</option>
-                    </select>
-                </div>
+                        <div class="form-group">
+                            <select class="custom-select" required>
+                            <option value="">Selecione a Cadeira do Exercício:</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            </select>
+                            <div class="invalid-feedback">Obrigatório!</div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="selectProf">Selecione o Professor que Criou:</label>
-                    <select multiple class="form-control" id="selectProf">
-                    <option>prof1</option>
-                    <option>prof2</option>
-                    <option>prof3</option>
-                    <option>prof4</option>
-                    <option>prof5</option>
-                    </select>
-                </div>
+                        <div class="form-group">
+                            <select class="custom-select" required>
+                            <option value="">Selecione o Professor que o criou:</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            </select>
+                            <div class="invalid-feedback">Obrigatório!</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="arquivoSolucao">
+                                <label class="custom-file-label" for="validatedCustomFile">Adicione uma Foto como Solução (opcional)</label>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="solutionImgUpload">Adicione uma Foto como Solução (opcional)</label>
-                    <input type="file" class="form-control-file" id="solutionImgUpload">
-                </div>
-                
+                        <input class="btn btn-primary" type="submit" value="Cadastrar">
+                    </div> 
+                </div>        
             </form>
         </div>
       </div>
