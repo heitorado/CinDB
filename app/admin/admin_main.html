@@ -9,11 +9,13 @@
 
     <title>sudo CinDB</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="./public/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
     <link href="./public/css/admin_page.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Bootstrap core CSS -->
+    <link href="./public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JQUERY Loading -->
     <script src="./public/js/jquery.min.js"></script>   
   </head>
 
@@ -33,7 +35,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link content-changer" href="admin_dashboard_default.html">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(current)</span>
                 </a>
@@ -62,12 +64,13 @@
                   Tags
                 </a>
               </li>
+              <!-- to be removed
               <li class="nav-item">
-                <a class="nav-link content-changer" href="#">
+                <a class="nav-link content-changer" href="form_exercicios.html">
                   <span data-feather="layers"></span>
                   nao clik
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </nav>
@@ -94,12 +97,23 @@
     </script>
 
     <script>
-        $('.content-changer').click(function(event){   
+        var url = "admin_dashboard_default.html";
+        var prevurl;
+
+        $(document).on('click', '.content-changer' ,function(event){   
+            console.log("event activacted...");
             event.preventDefault();
-            var url = $(this).attr('href');
-            window.history.pushState(url, url, url);
+            prevurl = url;
+            //console.log("url anterior: " + prevurl);
+
+            url = $(this).attr('href');
+            //console.log("url atual: " + url);
+
+            //window.history.pushState(url, url, url);
             $('#main_content').load('app/admin/'+ url);
          });
+
+         
 
         var init = 'app/admin/admin_dashboard_default.html';
         $('#main_content').load(init);

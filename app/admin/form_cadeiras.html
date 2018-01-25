@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Cadastrar nova Cadeira</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <button class="btn btn-sm btn-outline-secondary" id="backButton">
+            
+            <span data-feather="chevrons-left"></span>
+            Voltar
+            
+        </button>
+    </div>
+</div>
+    
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12">
+        <form action="">
+            
+            <div class="form-group">
+                <label for="nomeCadeira">Nome da Cadeira</label>
+                <input type="text" class="form-control" id="nomeCadeira" placeholder="ex: 'Algoritmos', 'Sistemas Digitais'">
+            </div>
+
+            <div class="form-group">
+                <label for="tagsCadeira">Assuntos da Cadeira</label>
+                <input type="text" class="form-control" id="tagsCadeira" placeholder="Separados por vírgula, ex: 'dijkstra, grafos, union-find, programacao dinamica, sorting'">
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+    
+<!-- Icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
+
+<script>
+    $('#backButton').click(function(event){
+    event.preventDefault();
+    
+    var sp;
+    sp = url;
+    url = prevurl;
+    prevurl = sp;
+
+    //console.log("[F]url atual: " + url);
+    //console.log("[F]url anterior: " + prevurl);
+    
+    $('#main_content').load('app/admin/' + url);
+    });   
+</script>

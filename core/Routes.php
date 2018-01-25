@@ -3,12 +3,14 @@
 class Routes
 {
     private $uri = [];
+    #private $admuri = [];
 
     public function __construct()
     {
         $uri_param = strtolower(filter_input(INPUT_GET, "uri", FILTER_SANITIZE_STRING));
 
         $this->uri = isset($_GET['uri']) ? explode("/", $uri_param) : null;
+        #$this->admuri = isset($_GET['uri'] ? explode("_"), $uri_param) : null;
         
         if (sizeof($this->uri) == 0) {
             require 'app/principal.html';
