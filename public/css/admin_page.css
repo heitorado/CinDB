@@ -11,8 +11,13 @@ body {
   /*
    * Sidebar
    */
+
+   a:focus{
+    outline: none;
+   }
   
   .sidebar {
+    outline: none;
     position: fixed;
     top: 0;
     bottom: 0;
