@@ -22,6 +22,11 @@ class Routes
             exit();
         }
 
+        if($this->uri[0] == "login"){
+            require 'app/admin/login_page.html';
+            exit();
+        }
+
         http_response_code(404);
         #require 'custom404.php';
         exit();
