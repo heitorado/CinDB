@@ -18,8 +18,9 @@
 
   <!-- JQUERY Loading -->
   <script src="./public/js/jquery.min.js"></script>
-  <!-- Icons -->
-  <script src="./public/js/feather.min.js"></script>
+  <!--FontAwesome Icon Fonts-->
+  <script src="https://use.fontawesome.com/38d7e17bed.js"></script>
+
 </head>
 
 <body>
@@ -36,34 +37,34 @@
     <div class="row">
       <nav class="col-md-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
-          <ul class="nav flex-column">
+          <ul class="nav flex-column myNavbar">
             <li class="nav-item">
               <a class="nav-link content-changer active" href="admin_dashboard_default.html">
-                <span class="ico" data-feather="home"></span>
+                <i class="fa fa-home" aria-hidden="true"></i>
                 Dashboard
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link content-changer" href="admin_cadastro_exercicio.html">
-                <span data-feather="align-left"></span>
+                <i class="fa fa-pencil-square" aria-hidden="true"></i>
                 Exercícios
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link content-changer" href="admin_cadastro_cadeiras.html">
-                <span data-feather="book-open"></span>
+                <i class="fa fa-book" aria-hidden="true"></i>
                 Cadeiras
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link content-changer" href="admin_cadastro_professores.html">
-                <span data-feather="users"></span>
+                <i class="fa fa-users" aria-hidden="true"></i>
                 Professores
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link content-changer" href="admin_cadastro_tags.html">
-                <span data-feather="tag"></span>
+                <i class="fa fa-tags" aria-hidden="true"></i>
                 Tags
               </a>
             </li>
@@ -96,8 +97,6 @@
   <script>
     var url = "admin_dashboard_default.html";
     var prevurl;
-
-    feather.replace();
 
     $(document).on('click', '.content-changer', function (event) {
       console.log("event activacted...");

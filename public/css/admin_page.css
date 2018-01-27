@@ -1,6 +1,10 @@
 body {
     font-size: .875rem;
   }
+
+  .myNavbar{
+    margin-left: 15px;
+  }
   
   .feather {
     width: 24px;
