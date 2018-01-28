@@ -11,13 +11,13 @@ class Routes
 
         $this->uri = isset($_GET['uri']) ? explode("/", $uri_param) : null;
         #$this->admuri = isset($_GET['uri'] ? explode("_"), $uri_param) : null;
-        
+
         if (sizeof($this->uri) == 0) {
             require 'app/principal.html';
             exit();
         }
 
-        if($this->uri[0] == "admin"){
+        if($this->uri[0] == "admin"){ //if($this->uri[0] == "admin" && sizeof($this->uri) > 1){
             require 'app/admin/admin_main.html';
             exit();
         }

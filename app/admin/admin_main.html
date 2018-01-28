@@ -11,13 +11,13 @@
   <title>sudo CinDB</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="./public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/CinDB/public/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="./public/css/admin_page.css" rel="stylesheet">
+  <link href="/CinDB/public/css/admin_page.css" rel="stylesheet">
 
 
   <!-- JQUERY Loading -->
-  <script src="./public/js/jquery.min.js"></script>
+  <script src="/CinDB/public/js/jquery.min.js"></script>
   <!--FontAwesome Icon Fonts-->
   <script src="https://use.fontawesome.com/38d7e17bed.js"></script>
 
@@ -90,9 +90,9 @@
   <!-- Placed at the end of the document so the pages load faster -->
 
   <!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script-->
-  <!--script>window.jQuery || document.write('<script src="./public/js/jquery-slim.min.js"><\/script>')</script-->
-  <script src="./public/js/popper.min.js"></script>
-  <script src="./public/js/bootstrap.min.js"></script>  
+  <!--script>window.jQuery || document.write('<script src="/CinDB/public/js/jquery-slim.min.js"><\/script>')</script-->
+  <script src="/CinDB/public/js/popper.min.js"></script>
+  <script src="/CinDB/public/js/bootstrap.min.js"></script>  
 
   <script>
     var url = "admin_dashboard_default.html";
@@ -108,7 +108,7 @@
       //console.log("url atual: " + url);
 
       //window.history.pushState(url, url, url);
-      $('#main_content').load('app/admin/' + url);
+      $('#main_content').load('/CinDB/app/admin/' + url);
 
       // OBS: PERMITE INDICAR QUAL LINK ESTA ATIVO
       if($(this).hasClass('nav-link')){
@@ -117,7 +117,7 @@
       }
     });    
 
-    var init = 'app/admin/admin_dashboard_default.html';
+    var init = '/CinDB/app/admin/admin_dashboard_default.html';
     $('#main_content').load(init);
 
     /*
@@ -134,7 +134,7 @@
       //console.log("[F]url atual: " + url);
       //console.log("[F]url anterior: " + prevurl);
 
-      $('#main_content').load('app/admin/' + url);
+      $('#main_content').load('/CinDB/app/admin/' + url);
     });
 
   </script>
