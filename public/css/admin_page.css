@@ -1,18 +1,28 @@
 body {
     font-size: .875rem;
   }
+
+  .myNavbar{
+    margin-left: 15px;
+  }
   
   .feather {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     vertical-align: text-bottom;
   }
   
   /*
    * Sidebar
    */
-  
+
+   a:focus{
+    outline: none;
+   }
+
   .sidebar {
+    font-size: 18px;
+    outline: none;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -39,6 +49,7 @@ body {
   }
   
   .sidebar .nav-link .feather {
+    margin-left: 10px;
     margin-right: 4px;
     color: #999;
   }
@@ -92,4 +103,20 @@ body {
   
   .border-top { border-top: 1px solid #e5e5e5; }
   .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+  /* other stuff  added by heitorado*/
   
+  .card-header{
+    font-size: 22px;
+  }
+
+  .card-title{
+    margin-top: 10px;
+    font-size: 72px;
+  }
+
+  .card{
+    height: 260px;
+    width: 350px;
+    text-align: center;
+  }
