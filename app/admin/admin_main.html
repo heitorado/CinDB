@@ -11,13 +11,13 @@
   <title>sudo CinDB</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="./public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/CinDB/public/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="./public/css/admin_page.css" rel="stylesheet">
+  <link href="/CinDB/public/css/admin_page.css" rel="stylesheet">
 
 
   <!-- JQUERY Loading -->
-  <script src="./public/js/jquery.min.js"></script>
+  <script src="/CinDB/public/js/jquery.min.js"></script>
   <!--FontAwesome Icon Fonts-->
   <script src="https://use.fontawesome.com/38d7e17bed.js"></script>
 
@@ -25,7 +25,7 @@
 
 <body>
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0 content-changer" href="admin_dashboard_default.html">CinDB Admin Page</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 content-changer" href="index">CinDB Admin Page</a>
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
         <a class="nav-link" href="#">Logout</a>
@@ -39,31 +39,31 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column myNavbar">
             <li class="nav-item">
-              <a class="nav-link content-changer active" href="admin_dashboard_default.html">
+              <a class="nav-link content-changer active" href="index" id="indexLink">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link content-changer" href="admin_cadastro_exercicio.html">
+              <a class="nav-link content-changer" href="exercicios" id="exercicioLink">
                 <i class="fa fa-pencil-square" aria-hidden="true"></i>
                 Exercícios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link content-changer" href="admin_cadastro_cadeiras.html">
+              <a class="nav-link content-changer" href="cadeiras" id="cadeiraLink">
                 <i class="fa fa-book" aria-hidden="true"></i>
                 Cadeiras
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link content-changer" href="admin_cadastro_professores.html">
+              <a class="nav-link content-changer" href="professores" id="professorLink">
                 <i class="fa fa-users" aria-hidden="true"></i>
                 Professores
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link content-changer" href="admin_cadastro_tags.html">
+              <a class="nav-link content-changer" href="tags" id="tagLink">
                 <i class="fa fa-tags" aria-hidden="true"></i>
                 Tags
               </a>
@@ -85,21 +85,17 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/CinDB/public/js/popper.min.js"></script>
+  <script src="/CinDB/public/js/bootstrap.min.js"></script>
+  <script src="/CinDB/public/js/admin_rotas.js"></script>
 
-  <!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script-->
-  <!--script>window.jQuery || document.write('<script src="./public/js/jquery-slim.min.js"><\/script>')</script-->
-  <script src="./public/js/popper.min.js"></script>
-  <script src="./public/js/bootstrap.min.js"></script>  
-
-  <script>
-    var url = "admin_dashboard_default.html";
+  <!--script>
+    var url;
     var prevurl;
 
     $(document).on('click', '.content-changer', function (event) {
-      console.log("event activacted...");
+      //console.log("event activacted...");
       event.preventDefault();
       prevurl = url;
       //console.log("url anterior: " + prevurl);
@@ -107,18 +103,13 @@
       url = $(this).attr('href');
       //console.log("url atual: " + url);
 
-      //window.history.pushState(url, url, url);
-      $('#main_content').load('app/admin/' + url);
+      window.history.pushState({ urlPath: url }, '', url);
+      rota();
+      //$('#main_content').load('/CinDB/app/admin/' + url);
+    });
 
-      // OBS: PERMITE INDICAR QUAL LINK ESTA ATIVO
-      if($(this).hasClass('nav-link')){
-        $('nav a.nav-link.content-changer.active').removeClass('active');
-        $(this).addClass('active');
-      }
-    });    
-
-    var init = 'app/admin/admin_dashboard_default.html';
-    $('#main_content').load(init);
+    var init = '/CinDB/app/admin/admin_dashboard_default.html';
+    //$('#main_content').load(init);
 
     /*
       OBS: TIREI O CODIGO DUPLICADO DE VOLTAR PARA COLOCAR NA ADMIN QUE SEGURAR TODAS
@@ -131,13 +122,24 @@
       url = prevurl;
       prevurl = sp;
 
+      window.history.pushState({ urlPath: url }, '', url);
+      rota();
+
       //console.log("[F]url atual: " + url);
       //console.log("[F]url anterior: " + prevurl);
 
-      $('#main_content').load('app/admin/' + url);
+      //$('#main_content').load('/CinDB/app/admin/' + url);
     });
 
-  </script>
+
+    // Permite recarregar a rota quando alterada pelo navegador
+    window.onpopstate = function (event) {
+      rota();
+    };
+
+
+    rota();
+  </script-->
 
 </body>
 
